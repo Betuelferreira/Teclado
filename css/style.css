@@ -119,3 +119,8 @@ body{
 .teclas .branca:nth-child(1) {
     margin-left: 0;
 }
+
+.pressionado{
+    background: linear-gradient(#222, black);
+    border-bottom: none;
+}
