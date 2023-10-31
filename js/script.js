@@ -1,12 +1,15 @@
 const teclas = document.querySelectorAll(".tecla");
 
 const playNota = (nota) => {
-    
+    const audio = new Audio(`../notas/${nota}.wav`)
+    audio.play();
 }
 
 
 //adiciona um noovo estilo na tecla
 const handleMousedown = (tecla) => {
+    playNota(tecla.getAttribute("data-nota"))
+
 //identifica quando a tecla preta é pressionada
     if (tecla.className.includes('preta')){
         tecla.classList.add("pressionado")
