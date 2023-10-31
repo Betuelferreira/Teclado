@@ -1,4 +1,7 @@
 const teclas = document.querySelectorAll(".tecla");
+const checkbox = document.querySelector('.checkbox_teclas');
+const switcher = document.querySelector('.switcher');
+const teclas2 = document.querySelector(".teclas")
 
 const playNota = (nota) => {
     const audio = new Audio(`../notas/${nota}.wav`)
@@ -33,3 +36,14 @@ teclas.forEach((tecla) => {
     tecla.addEventListener("mousedown", () => handleMousedown(tecla))
     tecla.addEventListener("mouseup", () => handleMouseup(tecla))
 });
+
+checkbox.addEventListener("change", ({ target }) => {
+    if (target.checked){
+        switcher.classList.add("switcher_ativa");
+        teclas2.classList.remove("desabilitar")
+        
+    }else{
+        switcher.classList.remove("switcher_ativa")
+        teclas2.classList.add("desabilitar")
+    }
+})
